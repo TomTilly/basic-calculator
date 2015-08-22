@@ -10,41 +10,31 @@ var value1 ='',								// First operand
 	$number = $('.number'),					// Store location of all number buttons
 	$operatorButton = $('.operator'),		// Store location of operator buttons
 	$equalsButton = $('#equals'),			// Store location of equals to button
-	$clearButton = $('#clear'),				// Store location of clear button
-	date;				
+	$clearButton = $('#clear');				// Store location of clear button		
 
 $screen.text('0');							// Set original value of screen text to '0'
 
 // Arithmetic operations
 
-function add(value1, value2) {
-	return value1 + value2;
-}
-
-function subtract(value1, value2) {
-	return value1 - value2;
-}
-
-function multiply(value1, value2) {
-	return value1 * value2;
-}
-
-function divide(value1, value2) {
-	return value1 / value2;
+var operations = {
+	add: function(value1, value2){
+		return value1 + value2;
+	},
+	subtract: function(value1, value2){
+		return value1 - value2;
+	},
+	multiply: function(value1, value2){
+		return value1 * value2;
+	},
+	divide: function(value1, value2){
+		return value1 / value2;
+	}
 }
 
 // Choose correct arithmetic operation, run corresponding function and return the result
 
 function operate(operator, value1, value2) {
-	if (operator === 'add') {
-		return add(value1, value2);
-	} else if (operator === 'subtract') {
-		return subtract(value1, value2);
-	} else if (operator === 'multiply') {
-		return multiply(value1, value2);
-	} else {
-		return divide(value1, value2);
-	}
+	return(operations[operator](value1, value2));
 }
 	
 // Add event listener on number buttons
