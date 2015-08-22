@@ -6,7 +6,7 @@ var value1 ='',								// First operand
 	value1Filled = false,					// Boolean to determine whether value1 is filled
 	value2Filled = false,					// Boolean to determine if value2 is filled
 	operator,								// Type of operator
-	$screen = $('#screenText'),				// Store location of screen of calculator
+	$screen = $('#screenText'),				// Store location of calculator's screen
 	$number = $('.number'),					// Store location of all number buttons
 	$operatorButton = $('.operator'),		// Store location of operator buttons
 	$equalsButton = $('#equals'),			// Store location of equals to button
@@ -108,8 +108,3 @@ $clearButton.on('click', function() {										// When clear button is pressed
 	value1 = '', value2 = '', value1Filled = false, value2Filled = false;	// Return variables to default states
 	$screen.text('0').hide().fadeIn('fast');								// Reset screen text to 0 and fade it in
 });
-
-// Change copyright date at bottom
-
-date = new Date();
-$('#date').text(date.getFullYear());
